@@ -1,1 +1,1 @@
-nodemon MS1/Rapid_Prototyping/Server/server.js
+node MS1/Rapid_Prototyping/Server/server.js

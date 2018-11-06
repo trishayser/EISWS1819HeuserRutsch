@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon MS1/Rapid_Prototyping/Server/server.js"
+    "start": "node MS1/Rapid_Prototyping/Server/server.js"
   },
   "author": "heuser & rutsch",
   "license": "ISC",
