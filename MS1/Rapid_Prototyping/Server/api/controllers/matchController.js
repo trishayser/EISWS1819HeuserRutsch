@@ -31,9 +31,32 @@ exports.match = function (req, res) {
                     url = ghURL + "?point=" + entry[n].body.route.start.lat + "," + entry[n].body.route.start.lng + "&point=" + entry[j].body.route.start.lat + "," + entry[j].body.route.start.lng + "&point=" + entry[j].body.route.destination.lat + "," + entry[j].body.route.destination.lng + "&point=" + entry[n].body.route.destination.lat + "," + entry[n].body.route.destination.lng + "&vehicle=car&locale=de&key=" + ghApiKey;
                     request(url, { json: true }, (err, res2, body2) => {
                         var distance = body2.paths[0].distance - body1.paths[0].distance;
+                        var score = 0;
+                        
+                        //Obstacles 
+                        if (entry[j].body.needObstacles.haveTransporter == true && entry[n].body.haveObstacles.haveTransporter == true) {
+                            score += 50;
+                        } else if (entry[j].body.haveObstacles.haveTransporter == true) {score +=50;}
+                        if (entry[j].body.needObstacles.driveTransporter == true && entry[n].body.haveObstacles.driveTransporter == true) {
+                            score += 10;
+                        } else if (entry[j].body.haveObstacles.driveTransporter == true) {score +=10;}
+                        if (entry[j].body.needObstacles.canMontate == true && entry[n].body.haveObstacles.canMontate == true) {
+                            score += 10;
+                        } else if (entry[j].body.haveObstacles.canMontate == true) {score +=10;}
+                        if (entry[j].body.needObstacles.canInstall == true && entry[n].body.haveObstacles.canInstall == true) {
+                            score += 10;
+                        } else if (entry[j].body.haveObstacles.canInstall == true) {score +=10;}
+                        if (entry[j].body.needObstacles.canDischarge == true && entry[n].body.haveObstacles.canDischarge == true) {
+                            score += 10;
+                        } else if (entry[j].body.haveObstacles.canDischarge == true) {score +=10;}
+                        if (entry[j].body.needObstacles.canTransport == true && entry[n].body.haveObstacles.canTransport == true) {
+                            score += 10;
+                        } else if (entry[j].body.haveObstacles.canTransport == true) {score +=10;}
+                        
                         data[mID]={
                             id : entry[n]._id.toString(),
-                            distance: distance
+                            distance: distance,
+                            score: score
                         }
                         mID++;
                         console.log("EINTRAG " + mID + " ADDED");
@@ -45,6 +68,7 @@ exports.match = function (req, res) {
             }
             async.timesSeries(entry.length, requestDistance, function (err, results) {
                 if (err) res.send(err);
+                
                 res.json(data).end();
 
             });
