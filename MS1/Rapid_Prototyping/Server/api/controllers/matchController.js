@@ -76,7 +76,7 @@ exports.match = function (req, res) {
                         if (disScore < 20) { disProzent = disProzent - (disScore / 20); }
                         else { disProzent = 0; }
                         disProzent = disProzent * 100;
-                        var score = (disProzent * 0.8) + (obsScore * 0.2);
+                        var score = (disProzent * 0.5) + (obsScore * 0.5);
 
                         data[mID] = {
                             id: entry[n]._id.toString(),
