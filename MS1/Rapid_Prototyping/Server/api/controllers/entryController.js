@@ -24,7 +24,7 @@ exports.create_entry = function(req, res) {
 
 
 exports.read_entry = function(req, res) {
-  Entry.findById(req.params.entryID, function(err, entry) {
+  Entry.findById({_id: req.params.entryId}, function(err, entry) {
     if (err)
       res.send(err);
     res.json(entry);

@@ -24,12 +24,21 @@ var EntrySchema = new Schema({
       "start": String,
       "end": String
     },
-    "obstacles": {
+    "needObstacles": {
       "haveTransporter": Boolean,
       "driveTransporter": Boolean,
       "canMontate": Boolean,
       "canInstall": Boolean,
-      "canDischarge": Boolean
+      "canDischarge": Boolean,
+      "canTransport": Boolean
+    },
+    "haveObstacles": {
+      "haveTransporter": Boolean,
+      "driveTransporter": Boolean,
+      "canMontate": Boolean,
+      "canInstall": Boolean,
+      "canDischarge": Boolean,
+      "canTransport": Boolean
     },
     "notices": String
   }
