@@ -4,44 +4,53 @@ var Schema = mongoose.Schema;
 
 
 var EntrySchema = new Schema({
-  "id": Number,
-  "user": String,
-  "date": String,
-  "title": String,
-  "text": String,
-  "body": {
-    "route": {
-      "start": {
-        "lat": String,
-        "lng": String
-      },
-      "destination": {
-        "lat": String,
-        "lng": String
-      }
-    },
-    "period": {
-      "start": String,
-      "end": String
-    },
-    "needObstacles": {
-      "haveTransporter": Boolean,
-      "driveTransporter": Boolean,
-      "canMontate": Boolean,
-      "canInstall": Boolean,
-      "canDischarge": Boolean,
-      "canTransport": Boolean
-    },
-    "haveObstacles": {
-      "haveTransporter": Boolean,
-      "driveTransporter": Boolean,
-      "canMontate": Boolean,
-      "canInstall": Boolean,
-      "canDischarge": Boolean,
-      "canTransport": Boolean
-    },
-    "notices": String
-  }
+ "id": Number,
+ "userID": String,
+ "date": String,
+ "title": String,
+ "route": {
+   "start": {
+     "lat": String,
+     "lng": String
+   },
+   "destination": {
+     "lat": String,
+     "lng": String
+   }
+ },
+ "period": {
+   "start": String,
+   "end": String
+ },
+ "needObstacles": {
+   "haveTransporter": Boolean,
+   "driveTransporter": Boolean,
+   "canMontate": Boolean,
+   "canInstall": Boolean,
+   "canDischarge": Boolean,
+   "canTransport": Boolean
+ },
+ "haveObstacles": {
+   "haveTransporter": Boolean,
+   "driveTransporter": Boolean,
+   "canMontate": Boolean,
+   "canInstall": Boolean,
+   "canDischarge": Boolean,
+   "canTransport": Boolean
+ },
+ "charge": {
+   "package": Array,
+"weight": Array
+   "size": {
+     "height": Array,
+     "length": Array,
+     "width": Array
+   },
+ },
+   "matchedPartner": String,
+   "active": Boolean,
+   "succeed": Boolean,
+   "transporter": String
 });
 
 module.exports = mongoose.model('Entry', EntrySchema);
