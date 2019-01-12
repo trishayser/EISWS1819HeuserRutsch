@@ -40,7 +40,7 @@ var EntrySchema = new Schema({
  },
  "charge": {
    "package": String,
-"weight": String
+   "weight": String,
    "size": {
      "height": String,
      "length": String,
