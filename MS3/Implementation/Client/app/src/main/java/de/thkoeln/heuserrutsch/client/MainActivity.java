@@ -1,6 +1,7 @@
 package de.thkoeln.heuserrutsch.client;
 
 import android.content.Intent;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -13,27 +14,16 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button buttonPostMain = (Button) findViewById(R.id.buttonPostMain);
-        Button buttonGetMain = (Button) findViewById(R.id.buttonGetMain);
+        FloatingActionButton mainFAB = (FloatingActionButton) findViewById(R.id.mainfab);
 
-        buttonPostMain.setOnClickListener( new View.OnClickListener() {
-
-                                               @Override
-                                               public void onClick(View v) {
-                                                   Intent postIntent = new Intent(getApplication().getApplicationContext(), PostActivity.class);
-                                                   startActivity(postIntent);
-                                               }
-                                           }
-        );
-        buttonGetMain.setOnClickListener( new View.OnClickListener() {
+        mainFAB.setOnClickListener( new View.OnClickListener() {
 
                                                @Override
                                                public void onClick(View v) {
-                                                   Intent getIntent = new Intent(getApplication().getApplicationContext(), GetActivity.class);
-                                                   startActivity(getIntent);
+                                                   Intent fabIntent = new Intent(getApplication().getApplicationContext(), newEntry.class);
+                                                   startActivity(fabIntent);
                                                }
                                            }
         );
-
     }
 }

@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".newEntry">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <EditText
+                android:id="@+id/neTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="Titel des Inserates"
+                android:textSize="36sp" />
+
+            <EditText
+                android:id="@+id/neStart"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="Abholungsort des Sperrguts"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/neDestination"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="Zielort des Sperrguts"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/netvVon"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Von" />
+
+            <EditText
+                android:id="@+id/nePeriodStart"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="text" />
+
+            <TextView
+                android:id="@+id/netvBis"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="bis" />
+
+            <EditText
+                android:id="@+id/nePeriodEnd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="text" />
+
+            <TextView
+                android:id="@+id/netvbiete"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Ich biete:" />
+
+            <CheckBox
+                android:id="@+id/neChkHhaveTransporter"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Fahrzeug bereitstellen" />
+
+            <CheckBox
+                android:id="@+id/neChkHdriveTransporter"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Fahrzeug führen" />
+
+            <CheckBox
+                android:id="@+id/neChkHCanTransport"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Transportieren" />
+
+            <CheckBox
+                android:id="@+id/neChkHCanDischarge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Aus- und Entladen" />
+
+            <CheckBox
+                android:id="@+id/neChkHCanMontate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Montieren" />
+
+            <CheckBox
+                android:id="@+id/neChkHCanInstall"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Installieren" />
+
+            <TextView
+                android:id="@+id/netvbrauche"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Ich brauche:" />
+
+            <CheckBox
+                android:id="@+id/neChkNhaveTransporter"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Fahrzeug bereitstellen" />
+
+            <CheckBox
+                android:id="@+id/neChkNdriveTransporter"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Fahrzeug führen" />
+
+            <CheckBox
+                android:id="@+id/neChkNCanTransport"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Transportieren" />
+
+            <CheckBox
+                android:id="@+id/neChkNCanDischarge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Aus- und Entladen" />
+
+            <CheckBox
+                android:id="@+id/neChkNCanMontate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Montieren" />
+
+            <CheckBox
+                android:id="@+id/neChkNCanInstall"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Installieren" />
+
+            <Button
+                android:id="@+id/neButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Erstellen" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+    </LinearLayout>
+</android.support.constraint.ConstraintLayout>
+

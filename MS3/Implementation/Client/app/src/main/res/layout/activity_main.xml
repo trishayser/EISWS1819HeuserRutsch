@@ -6,22 +6,21 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/mainfab"
+        android:layout_width="55dp"
+        android:layout_height="50dp"
+        android:clickable="true"
+        app:backgroundTint="@color/colorAccent"
+        app:srcCompat="@android:drawable/ic_input_add"
+        tools:layout_editor_absoluteX="313dp"
+        tools:layout_editor_absoluteY="483dp" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <Button
-            android:id="@+id/buttonPostMain"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="POST" />
-
-        <Button
-            android:id="@+id/buttonGetMain"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="GET" />
     </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>
