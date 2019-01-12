@@ -1,4 +1,4 @@
-message'use strict';
+'use strict';
 
 
 var mongoose = require('mongoose'),

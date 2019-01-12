@@ -9,10 +9,12 @@ var port = process.env.PORT || 3000;
 
 //Models laden
 var Entry = require('./api/models/entryModel');
-  
+var User = require('./api/models/userModel');
+var Message = require('./api/models/messageModel');
+
 // Mongoose Verbindung zu MongoDB
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://tristan:tristan420@ds253203.mlab.com:53203/eisprojekt'); 
+mongoose.connect('mongodb://tristan:tristan420@ds253203.mlab.com:53203/eisprojekt');
 
 //BodyParser
 app.use(bodyParser.urlencoded({ extended: true }));
