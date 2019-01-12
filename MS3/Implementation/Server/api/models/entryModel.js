@@ -39,12 +39,12 @@ var EntrySchema = new Schema({
    "canTransport": Boolean
  },
  "charge": {
-   "package": Array,
-"weight": Array
+   "package": String,
+"weight": String
    "size": {
-     "height": Array,
-     "length": Array,
-     "width": Array
+     "height": String,
+     "length": String,
+     "width": String
    },
  },
    "matchedPartner": String,
