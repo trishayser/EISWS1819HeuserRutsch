@@ -15,6 +15,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         FloatingActionButton mainFAB = (FloatingActionButton) findViewById(R.id.mainfab);
+        Button button = (Button) findViewById(R.id.button);
+        Button button2 = (Button) findViewById(R.id.button2);
 
         mainFAB.setOnClickListener( new View.OnClickListener() {
 
@@ -24,6 +26,24 @@ public class MainActivity extends AppCompatActivity {
                                                    startActivity(fabIntent);
                                                }
                                            }
+        );
+        button.setOnClickListener( new View.OnClickListener() {
+
+                                        @Override
+                                        public void onClick(View v) {
+                                            Intent fabIntent = new Intent(getApplication().getApplicationContext(), newEntry.class);
+                                            startActivity(fabIntent);
+                                        }
+                                    }
+        );
+        button2.setOnClickListener( new View.OnClickListener() {
+
+                                        @Override
+                                        public void onClick(View v) {
+                                            Intent fabIntent = new Intent(getApplication().getApplicationContext(), ListActivity.class);
+                                            startActivity(fabIntent);
+                                        }
+                                    }
         );
     }
 }
