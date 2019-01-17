@@ -91,11 +91,9 @@ public class newEntry extends AppCompatActivity {
                             .put("userID", "1")
                             .put("date", "01.01.2019");
                     JSONObject jsonStart = new JSONObject()
-                            .put("lat", editStart.getText())
-                            .put("lng", "TEST");
+                            .put("text", editStart.getText());
                     JSONObject jsonDestination = new JSONObject()
-                            .put("lat", editDestination.getText())
-                            .put("lng", "TEST");
+                            .put("text", editDestination.getText());
                     JSONObject jsonRoute = new JSONObject()
                             .put("start", jsonStart)
                             .put("destination", jsonDestination);

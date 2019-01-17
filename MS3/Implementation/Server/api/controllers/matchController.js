@@ -1,4 +1,4 @@
-var ghApiKey = "a544f51a-099e-4c3d-b42c-5d8b5b777c10"
+var ghApiKey = "fb03d204-d685-4044-a463-d57207621892";
 var ghURL = "https://graphhopper.com/api/1/route/";
 var request = require('request');
 var async = require('async');
@@ -51,7 +51,7 @@ exports.match = function (req, res) {
 
                         var obsScore = 0;
 
-                        //Obstacles 
+                        //Obstacles
                         if (entry[j].body.needObstacles.haveTransporter == true && entry[n].body.haveObstacles.haveTransporter == true) {
                             obsScore += 50;
                         } else if (entry[j].body.haveObstacles.haveTransporter == true) { obsScore += 50; }

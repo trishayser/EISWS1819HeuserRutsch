@@ -4,18 +4,20 @@ var Schema = mongoose.Schema;
 
 
 var EntrySchema = new Schema({
- "id": Number,
+ "id": String,
  "userID": String,
  "date": String,
  "title": String,
  "route": {
    "start": {
      "lat": String,
-     "lng": String
+     "lng": String,
+     "text": String
    },
    "destination": {
      "lat": String,
-     "lng": String
+     "lng": String,
+     "text": String
    }
  },
  "period": {
