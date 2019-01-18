@@ -30,6 +30,10 @@ module.exports = function(app) {
       .put(user.update_user)
       .delete(user.delete_user);
 
+  app.route('/entry')
+        .get(entry.list_users)
+        .post(entry.create_user);
+
   // Message Routes
   app.route('/message')
     .get();
