@@ -31,8 +31,8 @@ module.exports = function(app) {
       .delete(user.delete_user);
 
   app.route('/user')
-        .get(entry.list_users)
-        .post(entry.create_user);
+        .get(user.list_users)
+        .post(user.create_user);
 
   // Message Routes
   app.route('/message')
