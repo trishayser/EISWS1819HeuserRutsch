@@ -27,8 +27,8 @@ module.exports = function(app) {
 
   app.route('/user/:userID')
       .get(user.read_user)
-      .put(user.update_entry)
-      .delete(user.delete_entry);
+      .put(user.update_user)
+      .delete(user.delete_user);
 
   // Message Routes
   app.route('/message')
