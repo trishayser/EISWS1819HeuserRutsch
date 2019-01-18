@@ -21,8 +21,8 @@ module.exports = function(app) {
 
 
   // User Routes
-  app.route('/user')
-    .get();
+  app.route('/user/username/:username')
+    .get(user.read_username);
 
   // Message Routes
   app.route('/message')

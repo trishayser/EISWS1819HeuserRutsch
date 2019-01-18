@@ -12,6 +12,7 @@ var EntrySchema = new Schema({
   "email": String,
   "gender": String,
   "picture": String,
+  "password": String,
   "rating": {
       "userID": Array,
       "points": Array,
