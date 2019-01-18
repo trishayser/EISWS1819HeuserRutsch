@@ -19,13 +19,13 @@ exports.match = function (req, res) {
         data = JSON.parse(JSON.stringify({}));
         var j = 0, mID = 0;
         while (entry[j]._id.toString() != req.params.entryID) {
-            console.log(j + ". Vergleich : " + entry[0]._id.toString() + " mit " + req.params.entryID)
+            console.log(j + ". Vergleich : " + entry[j]._id.toString() + " mit " + req.params.entryID)
             j++;
         }
 
         var rangeJ = moment.range(new Date(entry[j].period.start), new Date(entry[j].period.end));
 
-        url1 = ghURL + "?point=" + entry[j].route.start.lat + "," + entry[j].route.start.lng + "&point=" + entry[j].body.route.destination.lat + "," + entry[j].body.route.destination.lng + "&vehicle=car&locale=de&key=" + ghApiKey;
+        url1 = ghURL + "?point=" + entry[j].route.start.lat + "," + entry[j].route.start.lng + "&point=" + entry[j].route.destination.lat + "," + entry[j].route.destination.lng + "&vehicle=car&locale=de&key=" + ghApiKey;
         request(url1, { json: true }, (err, res1, body1) => {
             if (err) console.log(err);
             var i;
@@ -36,7 +36,7 @@ exports.match = function (req, res) {
                 console.log(rangeJ);
                 console.log(rangeN);
                 console.log(rangeJ.overlaps(rangeN))
-                if (entry[n].user != entry[j].user && rangeJ.overlaps(rangeN) == true) {
+                if (entry[n].userID != entry[j].userID && rangeJ.overlaps(rangeN) == true) {
 
                     url = ghURL + "?point=" + entry[n].route.start.lat + "," + entry[n].route.start.lng + "&point=" + entry[j].route.start.lat + "," + entry[j].route.start.lng + "&point=" + entry[j].route.destination.lat + "," + entry[j].route.destination.lng + "&point=" + entry[n].route.destination.lat + "," + entry[n].route.destination.lng + "&vehicle=car&locale=de&key=" + ghApiKey;
                     request(url, { json: true }, (err, res2, body2) => {
@@ -57,16 +57,16 @@ exports.match = function (req, res) {
                         } else if (entry[j].haveObstacles.haveTransporter == true) { obsScore += 50; }
                         if (entry[j].needObstacles.driveTransporter == true && entry[n].haveObstacles.driveTransporter == true) {
                             obsScore += 10;
-                        } else if (entry[j].body.haveObstacles.driveTransporter == true) { obsScore += 10; }
+                        } else if (entry[j].haveObstacles.driveTransporter == true) { obsScore += 10; }
                         if (entry[j].needObstacles.canMontate == true && entry[n].haveObstacles.canMontate == true) {
                             obsScore += 10;
-                        } else if (entry[j].body.haveObstacles.canMontate == true) { obsScore += 10; }
+                        } else if (entry[j].haveObstacles.canMontate == true) { obsScore += 10; }
                         if (entry[j].needObstacles.canInstall == true && entry[n].haveObstacles.canInstall == true) {
                             obsScore += 10;
-                        } else if (entry[j].body.haveObstacles.canInstall == true) { obsScore += 10; }
+                        } else if (entry[j].haveObstacles.canInstall == true) { obsScore += 10; }
                         if (entry[j].needObstacles.canDischarge == true && entry[n].haveObstacles.canDischarge == true) {
                             obsScore += 10;
-                        } else if (entry[j].body.haveObstacles.canDischarge == true) { obsScore += 10; }
+                        } else if (entry[j].haveObstacles.canDischarge == true) { obsScore += 10; }
                         if (entry[j].needObstacles.canTransport == true && entry[n].haveObstacles.canTransport == true) {
                             obsScore += 10;
                         } else if (entry[j].haveObstacles.canTransport == true) { obsScore += 10; }
@@ -78,8 +78,13 @@ exports.match = function (req, res) {
                         disProzent = disProzent * 100;
                         var score = (disProzent * 0.5) + (obsScore * 0.5);
 
+                        //data[mID] = entry[n];
+                        //data[mID]["score"] = score;
+                        //data[mID]["distanceScore"] = disProzent;
+                        //data[mID]["obsstacleScore"] = obsScore;
+                        //data[mID]["disScore"] = disScore;
                         data[mID] = {
-                            id: entry[n]._id.toString(),
+                            entry: entry[n],
                             score: score,
                             distanceScore: disProzent,
                             obsstacleScore: obsScore,

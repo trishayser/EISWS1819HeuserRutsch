@@ -16,7 +16,7 @@ module.exports = function(app) {
     .delete(entry.delete_entry);
 
   //  Match Routes
-  app.route('/match/:entryID')
+  app.route('/entry/match/:entryID')
     .get(match.match);
 
 
