@@ -22,7 +22,13 @@ module.exports = function(app) {
 
   // User Routes
   app.route('/user/username/:username')
-    .get(user.read_username);
+    .get(user.read_username)
+
+
+  app.route('/user/:userID')
+      .get(user.read_user)
+      .put(user.update_entry)
+      .delete(user.delete_entry);
 
   // Message Routes
   app.route('/message')
