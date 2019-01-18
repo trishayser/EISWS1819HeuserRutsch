@@ -30,7 +30,7 @@ module.exports = function(app) {
       .put(user.update_user)
       .delete(user.delete_user);
 
-  app.route('/entry')
+  app.route('/user')
         .get(entry.list_users)
         .post(entry.create_user);
 
