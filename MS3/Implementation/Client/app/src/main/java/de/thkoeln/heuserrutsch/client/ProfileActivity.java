@@ -21,5 +21,7 @@ public class ProfileActivity extends AppCompatActivity {
     TextView userrating = (TextView) findViewById(R.id.Profile_agegender);
     TextView usermail = (TextView) findViewById(R.id.Profile_agegender);
 
+    String exusermail= getIntent().getStringExtra("EXTRA_Usermail");
+
 
 }

@@ -11,6 +11,7 @@ var EntrySchema = new Schema({
   "residence": String,
   "email": String,
   "gender": String,
+  "birthdate": String,
   "picture": String,
   "password": String,
   "rating": {
