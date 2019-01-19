@@ -11,12 +11,13 @@ exports.list_users = function(req, res) {
         res.send(err);
       res.json(user);
     });
-  }
+  } else {
   User.find({}, function(err, user) {
     if (err)
       res.send(err);
     res.json(user);
   });
+}
 };
 
 
