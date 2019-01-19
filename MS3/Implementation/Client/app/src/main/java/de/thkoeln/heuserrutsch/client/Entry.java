@@ -1,7 +1,9 @@
 package de.thkoeln.heuserrutsch.client;
 
+import java.lang.reflect.Array;
+
 public class Entry {
-    Number id;
+    String id;
     String userID;
     String date;
     String title;
@@ -16,14 +18,18 @@ public class Entry {
     String matchedPartner, transporter;
     Boolean suceed, active;
 
-    public Entry(String userID, String title) {
-        this.userID = userID;
-        this.title = title;
-    }
+    //EXTRA DATA FOR UI
+    String uusername, uname, usurname;
+    String urating;
+    Integer score;
 
-    public Entry(String userID, String title, Boolean hHaveTransporter, Boolean hDriveTransporter, Boolean hCanMontate, Boolean hCanInstall, Boolean hCanDischarge, Boolean hCanTransport, Boolean nHaveTransporter, Boolean nDriveTransporter, Boolean nCanMontate, Boolean nCanInstall, Boolean nCanDischarge, Boolean nCanTransport) {
-        this.userID = userID;
-        this.title = title;
+
+
+
+    public Entry(String id, Boolean hHaveTransporter, Boolean hDriveTransporter, Boolean hCanMontate, Boolean hCanInstall, Boolean hCanDischarge, Boolean hCanTransport, Boolean nHaveTransporter, Boolean nDriveTransporter, Boolean nCanMontate, Boolean nCanInstall, Boolean nCanDischarge, Boolean nCanTransport, String userID, String uname, String usurname, Integer score) {
+        System.out.println("CONSTRUCTOR");
+        System.out.println(id + " " + hDriveTransporter + " " + userID);
+        this.id = id;
         this.hHaveTransporter = hHaveTransporter;
         this.hDriveTransporter = hDriveTransporter;
         this.hCanMontate = hCanMontate;
@@ -36,6 +42,10 @@ public class Entry {
         this.nCanInstall = nCanInstall;
         this.nCanDischarge = nCanDischarge;
         this.nCanTransport = nCanTransport;
+        this.userID = userID;
+        this.uname = uname;
+        this.usurname = usurname;
+        this.score = score;
     }
     /*
     "id": Number,

@@ -31,7 +31,7 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:inputType="textPersonName"
-                android:text="Abholungsort des Sperrguts"
+                android:text="Köln Mülheim"
                 android:textSize="16sp" />
 
             <EditText
@@ -40,7 +40,7 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:inputType="textPersonName"
-                android:text="Zielort des Sperrguts"
+                android:text="Köln Nippes"
                 android:textSize="16sp" />
 
             <TextView
@@ -53,8 +53,8 @@
                 android:id="@+id/nePeriodStart"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="text" />
+                android:inputType="text"
+                android:text="01/01/2019"/>
 
             <TextView
                 android:id="@+id/netvBis"
@@ -66,8 +66,8 @@
                 android:id="@+id/nePeriodEnd"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="text" />
+                android:inputType="text"
+                android:text="01/01/2019"/>
 
             <TextView
                 android:id="@+id/netvbiete"

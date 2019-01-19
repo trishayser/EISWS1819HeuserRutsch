@@ -41,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
                                         @Override
                                         public void onClick(View v) {
                                             Intent fabIntent = new Intent(getApplication().getApplicationContext(), ListActivity.class);
+                                            fabIntent.putExtra("_id", "5c433f3d0a4a9f00174c9e9b");
                                             startActivity(fabIntent);
                                         }
                                     }

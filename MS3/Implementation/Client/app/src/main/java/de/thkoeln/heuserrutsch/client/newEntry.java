@@ -88,7 +88,7 @@ public class newEntry extends AppCompatActivity {
                     JSONObject json = new JSONObject()
                             .put("id", "123")
                             .put("title", editTitle.getText())
-                            .put("userID", "1")
+                            .put("userID", "admin")
                             .put("date", "01.01.2019");
                     JSONObject jsonStart = new JSONObject()
                             .put("text", editStart.getText());
@@ -99,8 +99,8 @@ public class newEntry extends AppCompatActivity {
                             .put("destination", jsonDestination);
                     json.put("route", jsonRoute);
                     JSONObject jsonPeriod = new JSONObject()
-                            .put("start", editPeriodStart)
-                            .put("end", editPeriodEnd);
+                            .put("start", editPeriodStart.getText())
+                            .put("end", editPeriodEnd.getText());
                     json.put("period", jsonPeriod);
                     JSONObject jsonNeed = new JSONObject()
                             .put("haveTransporter", chkNhaveTransporter.isChecked())
@@ -142,8 +142,13 @@ public class newEntry extends AppCompatActivity {
                         @Override
                         public void onResponse(JSONObject response) {
 
-                           System.out.println("Response1234:" + response);
+                            System.out.println("Response1234:" + response);
                             Intent listIntent = new Intent(getApplication().getApplicationContext(), ListActivity.class);
+                            try {
+                                listIntent.putExtra("_id", response.getString("_id"));
+                            } catch (JSONException e) {
+                                e.printStackTrace();
+                            }
                             startActivity(listIntent);
 
                         }

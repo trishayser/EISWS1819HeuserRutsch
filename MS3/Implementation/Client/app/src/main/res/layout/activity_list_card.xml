@@ -47,6 +47,77 @@
                     android:layout_toRightOf="@+id/list_person_photo"
                     android:text="TextView" />
 
+                <TextView
+                    android:id="@+id/list_text_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/list_text_2"
+                    android:layout_toRightOf="@+id/list_person_photo"
+                    android:text="TextView" />
+
+                <View
+                    android:id="@+id/list_partline"
+                    android:layout_width="fill_parent"
+                    android:layout_height="2dp"
+                    android:background="#c0c0c0"
+                    android:layout_toRightOf="@+id/list_person_photo"
+                    android:layout_below="@id/list_text_3" />
+
+                <ImageView
+                    android:id="@+id/lcimageView1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/btn_dialog"
+                    android:layout_toRightOf="@+id/list_person_photo"
+                    android:layout_below="@id/list_partline" />
+
+                <ImageView
+                    android:id="@+id/lcimageView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/btn_dialog"
+                    android:layout_toRightOf="@+id/lcimageView1"
+                    android:layout_below="@id/list_partline" />
+
+                <ImageView
+                    android:id="@+id/lcimageView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/btn_dialog"
+                    android:layout_toRightOf="@+id/lcimageView2"
+                    android:layout_below="@id/list_partline" />
+
+                <ImageView
+                    android:id="@+id/lcimageView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/btn_dialog"
+                    android:layout_toRightOf="@+id/lcimageView3"
+                    android:layout_below="@id/list_partline" />
+
+                <ImageView
+                    android:id="@+id/lcimageView5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/btn_dialog"
+                    android:layout_toRightOf="@+id/lcimageView4"
+                    android:layout_below="@id/list_partline" />
+                <ImageView
+                    android:id="@+id/lcimageView6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/btn_dialog"
+                    android:layout_toRightOf="@+id/lcimageView5"
+                    android:layout_below="@id/list_partline" />
+                <ImageView
+                    android:id="@+id/lcimageView7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/btn_dialog"
+                    android:layout_toRightOf="@+id/lcimageView6"
+                    android:layout_below="@id/list_partline" />
+
+
             </RelativeLayout>
 
         </android.support.v7.widget.CardView>
