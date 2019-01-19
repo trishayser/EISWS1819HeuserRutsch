@@ -7,8 +7,10 @@ const MomentRange = require('moment-range');
 const moment = MomentRange.extendMoment(Moment);
 
 
+
 var mongoose = require('mongoose'),
-    Entry = mongoose.model('Entry');
+    Entry = mongoose.model('Entry'),
+    User = mongoose.model('User');
 
 exports.match = function (req, res) {
     Entry.find({}, function (err, entry) {
@@ -83,14 +85,23 @@ exports.match = function (req, res) {
                         //data[mID]["distanceScore"] = disProzent;
                         //data[mID]["obsstacleScore"] = obsScore;
                         //data[mID]["disScore"] = disScore;
-                        data[mID] = {
-                            entry: entry[n],
-                            score: score,
-                            distanceScore: disProzent,
-                            obsstacleScore: obsScore,
-                            disScore: disScore
-                        }
-                        mID++;
+                        var user;
+                        User.findOne({userID: entry[n].userID}, function(err, user) {
+                          if (err)
+                            res.send(err);
+                          user = user;
+                          data[mID] = {
+                              entry: entry[n],
+                              user: user,
+                              score: score,
+                              distanceScore: disProzent,
+                              obsstacleScore: obsScore,
+                              disScore: disScore
+                          }
+                          mID++;
+                        });
+
+
                         console.log("EINTRAG " + mID + " ADDED");
                         console.log(data)
 
