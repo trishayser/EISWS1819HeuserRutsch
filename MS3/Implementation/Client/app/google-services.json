@@ -1,0 +1,73 @@
+{
+  "project_info": {
+    "project_number": "785403869845",
+    "firebase_url": "https://eisws1819-a5ab8.firebaseio.com",
+    "project_id": "eisws1819-a5ab8",
+    "storage_bucket": "eisws1819-a5ab8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:785403869845:android:c34ea24d4c091110",
+        "android_client_info": {
+          "package_name": "de.thkoeln.heuserrutsch.client"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "785403869845-94sjvvke9nfla21l164sid204c8m35j8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD6cgBRxrxRiXu-s78IbD7l_ZTdsulAMiA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:785403869845:android:69cce9cc3e9e36cb",
+        "android_client_info": {
+          "package_name": "rutschheuser.eisws1819"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "785403869845-94sjvvke9nfla21l164sid204c8m35j8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD6cgBRxrxRiXu-s78IbD7l_ZTdsulAMiA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
