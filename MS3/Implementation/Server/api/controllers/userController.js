@@ -5,6 +5,13 @@ var mongoose = require('mongoose'),
     User = mongoose.model('User');
 
 exports.list_users = function(req, res) {
+  if(req.query.mail!=null){
+    User.findOne({email: req.query.mail}, function(err, user) {
+      if (err)
+        res.send(err);
+      res.json(user);
+    });
+  }
   User.find({}, function(err, user) {
     if (err)
       res.send(err);
